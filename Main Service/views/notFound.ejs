@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oops! Page Not Found (404)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ensures full-height content */
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: #666;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      table {
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+
+      tr:hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Oops! Page Not Found</h1>
+    <h2>Don't worry, let's find what you're looking for:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>http://localhost:8001/api/register</td>
+          <td>Register a new user</td>
+        </tr>
+        <tr>
+          <td>http://localhost:8001/api/login</td>
+          <td>Log in to your account</td>
+        </tr>
+        <tr>
+          <td>http://localhost:8001/api/protected</td>
+          <td>Access protected resources (requires verification)</td>
+        </tr>
+        <tr>
+          <td>http://localhost:8001/api/candidate</td>
+          <td>Get candidate information</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
