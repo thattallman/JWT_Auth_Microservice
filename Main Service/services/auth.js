@@ -16,6 +16,11 @@ function setToken(user) {
 // Function to verify a JWT token
 function verifyUser(token) {
   if (!token) return null;
+  try{
   return jwt.verify(token, secretJWT);
+  }catch(error){
+    console.log('wrong token ')
+    return null
+  }
 }
 module.exports = { setToken, verifyUser };

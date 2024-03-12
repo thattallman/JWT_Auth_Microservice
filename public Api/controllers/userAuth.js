@@ -12,6 +12,7 @@ async function handleUserPostDetails(req, res) {
     let existingUser;
     try {
       // Finding existing user in the public API database before calling the main service
+      console.log("Tryying to search data in the local db")
       existingUser = await USERTOKEY.findOne({
         email: email,
         password_hash: password_hash,
@@ -29,13 +30,15 @@ async function handleUserPostDetails(req, res) {
     } else {
       try {
         // Making a POST request to the main  to fetch user data since the user is not present
+        console.log("About to send the request");
         const response = await axios.post(
-          `http://localhost:8001/api/public?api_key=${API_KEY}`,
+          `http://mainservicenet:8001/api/public?api_key=${API_KEY}`,
           {
             email: email,
             password_hash: password_hash,
           }
         );
+        console.log("Did it successfullt ")
         const userData = response.data.data[0];
         const userId = userData._id;
         const userEmail = userData.email;

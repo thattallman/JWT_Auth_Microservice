@@ -7,7 +7,6 @@ const { connectToMongoDB } = require("./connections");
 const { handleJWTToken } = require("./Middlewares/auth");
 const { PORT, MONGO_URL } = require("./config/config");
 const { verifyPublicApiKey } = require("./Middlewares/publicApiAuth");
-
 app.use(cookieParser());
 
 connectToMongoDB(MONGO_URL);
@@ -16,9 +15,6 @@ const candidateRouter = require("./routes/condidateApi");
 const publicApiRouter = require("./routes/publicApi");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-
-
 app.use("/api", userRouter);
 
 app.use("/api/candidate", handleJWTToken, candidateRouter);

@@ -9,7 +9,7 @@ async function handleGetCandidate(req, res) {
     const user = await USERTOKEY.findOne({ apiKey: apiKey });
      // Making a GET request to fetch candidate data from the  main service 
     const response = await axios.get(
-      `http://localhost:8001/api/public/candidate?api_key=${API_KEY} `,
+      `http://mainservicenet:8001/api/public/candidate?api_key=${API_KEY} `,
       {
         headers: {
           user_id: user.userId,  // Passing the user's ID as a header 
@@ -34,7 +34,7 @@ async function handlePostCandidate(req, res) {
 
     // Making a POST request to add candidate data to main service 
     const response = await axios.post(
-      `http://localhost:8001/api/public/profile?api_key=${API_KEY} `,
+      `http://mainservicenet:8001/api/public/profile?api_key=${API_KEY} `,
       {
         first_name: first_name,
         last_name: last_name,

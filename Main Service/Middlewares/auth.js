@@ -7,7 +7,7 @@ function handleJWTToken(req, res, next) {
   if (!token) res.render("Login");
   else {
     const verify = verifyUser(token);
-    if (!verify) res.render("Home");
+    if (!verify) res.render("Login"); // there was a loop hole , if there is some token present and you went to protected , the program will crash
     else {
         const _id = verify._id;
    
